@@ -1,0 +1,49 @@
+Arko Roy
++91 6291325676 | arkoroy302@gmail.com | https://www.linkedin.com/in/arkoroyy | github.com/arko05roy
+Technical Skills
+Programming Languages: JavaScript, TypeScript, Solidity, Python, HTML, CSS, C++, C, Rust, Streamlit
+Frameworks: React.js, Next.js, Node.js, TailwindCSS, Bootstrap, ShadCN, Aceternity,Motia
+Databases: MongoDB, MySQL, PostgreSQL, Firebase, Prisma, Supabase
+Developer Tools: Git, GitHub, Docker, VS Code, Foundry, Hardhat, Recoil, Zustand, Redis
+Achievements
+• Bounty Winner at ETHGlobal New Delhi (2000+ participants )
+• Winner at Build on CELO Kolkata Hackathon (100+ teams)
+• First Place Winner Avalanche Team1 Hackathon Kolkata (100+ teams)
+• First Place Winner at Hack Heritage 2024 (1000+ participants).
+• Second Place at East India Blockchain Summit 2025 held at IIT Kharagpur.
+• Third Place at Edu-Chain Regional Hackathon at Techno Main Salt Lake.
+Professional Experience
+Blockchain Full Stack Developer October 2025 – Current
+Supermission
+• Developed and integrated autonomous AI agents built using x402 (Base), enabling multi-step task
+orchestration, tool execution, memory persistence, and cross-service reasoning through event-driven agent pipelines.
+Blockchain Full Stack Developer Intern June 2025 – September 2025
+VENQ
+• Developed and deployed an ERC-1155 fractionalization smart contract, enabling real estate tokenization powering
+10x growth in asset handling using Solidity
+• Revamped and migrated a legacy real estate investment platform, improving performance by 60%, and
+modernizing the entire frontend with responsive design using NextJS and Tailwind
+Frontend Developer Intern April 2025 –June 2025
+Research Commons
+• Collaborated cross-functionally with backend and product teams to deliver responsive, modular UI components
+using Next.js and Tailwind CSS.
+AI Developer Intern February 2025 – April 2025
+A1 Future Technologies
+• Built a scalable AI-powered systems, cutting manual errors and improving efficiency by 80%. using Streamlit
+Project Experience
+Arx - https://arx-protocol.vercel.app/ | OP Stack, Solidity, Go, Foundry, Next.js, Wagmi, Docker, IPFS
+• Architected a Layer-3 blockchain on OP Stack featuring Proof-of-Impact consensus, modular
+smart-contract infrastructure (TaskRegistry, FundingPool, ERC1155 Carbon Credits, Prediction Markets, DAO),
+and cross-chain settlement into Celo → Ethereum, enabling trust-minimized verification of real-world
+environmental work.
+Velto —https://velto-os.vercel.app/ | Next.js, React.js, Node.js, MongoDB, Redis, Solidity, TailwindCSS, MCP
+• Architected a universal AI memory layer that seamlessly synchronizes context across ChatGPT, Claude
+and Cursor ,cutting user rework by 70%
+• Designed and deployed semantic knowledge graphs + AI-powered retrieval pipelines, enabling instant
+recall of past conversations and research with 3x faster insight discovery.
+Tzunami — https://tzunami.vercel.app/ | Next.js, Express.js, Solidity, Circom, MongoDB, Tailwind CSS
+• Engineered a privacy-preserving financial platform combining Self.xyz zero-knowledge KYC with the
+fhERC encrypted token protocol on Ethereum, enabling private transactions while meeting compliance
+requirements.
+• Implemented advanced cryptographic infrastructure (Groth16 ZK proofs, ElGamal encryption, Poseidon
+hashing) to achieve proof generation, encrypted balances, and stealth address support for secure user experience.
