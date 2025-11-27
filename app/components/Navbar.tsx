@@ -61,11 +61,6 @@ export default function Navbar() {
         onClick={() => setIsOpen(false)}
       />
 
-      {/* Spotify Widget - Fixed Top Left (Desktop) or Hidden on Mobile */}
-      <div className="fixed top-6 left-8 z-50 hidden lg:block">
-        <SpotifyWidget />
-      </div>
-
       {/* Toggle Button - Floating Block */}
       <motion.button
         onClick={() => setIsOpen(!isOpen)}
@@ -103,8 +98,8 @@ export default function Navbar() {
             <MagneticLink href="#experience" onClick={() => setIsOpen(false)}>EXPERIENCE</MagneticLink>
             <MagneticLink href="#contact" onClick={() => setIsOpen(false)}>CONTACT</MagneticLink>
 
-            {/* Mobile Spotify */}
-            <div className="mt-8 lg:hidden">
+            {/* Spotify Widget */}
+            <div className="mt-8">
               <SpotifyWidget />
             </div>
           </div>

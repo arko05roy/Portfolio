@@ -11,11 +11,11 @@ import { BentoGrid } from "./components/BentoGrid";
 import { BentoItem } from "./components/BentoItem";
 import Lenis from "lenis";
 import {
-  IconBrandGithub,
   IconBrandLinkedin,
+  IconBrandGithub,
+  IconBrandX,
   IconMail,
   IconCode,
-  IconTrophy,
   IconBriefcase,
   IconArrowUpRight,
 } from "@tabler/icons-react";
@@ -46,97 +46,104 @@ export default function Home() {
 
       <Navbar />
 
-      <main className="pt-32 px-4 md:px-8 max-w-7xl mx-auto relative z-10">
+      {/* Main stacking container */}
+      <main className="relative min-h-screen">
 
-        {/* Header Section */}
-        <div className="mb-12">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 tracking-tight">
-            Arko Roy
-          </h1>
-          <p className="text-xl text-neutral-400 max-w-2xl">
-            Blockchain Full Stack Developer building the future of Web3.
-            Crafting elegant solutions with robust infrastructure.
-          </p>
-        </div>
+        {/* Hero Section */}
+        <section className="relative w-full h-[100vh] lg:h-[110vh] flex flex-col justify-end lg:overflow-visible overflow-hidden">
+          {/* Background Image */}
+          <div className="absolute inset-0 z-0">
+            <Image
+              src="/back.jpeg"
+              alt="Hero Background"
+              fill
+              className="object-cover object-center md:object-bottom lg:object-cover lg:object-top scale-90 md:scale-90 lg:scale-100"
+              priority
+              quality={100}
+              unoptimized
+            />
+            {/* Gradient Overlays for Fade */}
+            <div className="absolute inset-0 bg-gradient-to-b from-[#050505] via-transparent to-[#050505]" />
+            <div className="hidden lg:block absolute inset-0 bg-gradient-to-r from-[#050505] via-transparent to-[#050505]" />
+          </div>
 
-        <BentoGrid className="max-w-7xl mx-auto md:auto-rows-[20rem]">
+          {/* Da Vinci Decorative Elements */}
+          <div className="absolute inset-0 pointer-events-none z-10">
+            <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+          </div>
 
-          {/* Profile Card - Compact */}
-          <BentoItem
-            className="md:col-span-2 md:row-span-1"
-            title={
-              <span className="text-2xl text-gradient font-serif font-bold">About Me</span>
-            }
-            description={
-              <div className="space-y-2 text-base mt-2 font-mono text-neutral-400">
-                <p>
-                  I&apos;m a passionate developer based in Kolkata, India, specializing in full-stack blockchain development.
-                  I build scalable decentralized applications and infrastructure.
-                </p>
-                <div className="flex flex-wrap gap-2 mt-2">
-                  <span className="px-3 py-1 bg-white/5 rounded-full text-sm border border-white/10 backdrop-blur-md">Blockchain Dev</span>
-                  <span className="px-3 py-1 bg-white/5 rounded-full text-sm border border-white/10 backdrop-blur-md">Full Stack</span>
-                  <span className="px-3 py-1 bg-white/5 rounded-full text-sm border border-white/10 backdrop-blur-md">System Design</span>
-                </div>
+          {/* Hero Text - Center Bottom */}
+          <div className="absolute bottom-16 lg:-bottom-45 left-1/2 -translate-x-1/2 z-20 text-center">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-light text-white tracking-tight mb-2" style={{ fontFamily: 'var(--font-serif), Georgia, serif' }}>
+              Arko Roy
+            </h1>
+            <p className="text-sm md:text-base lg:text-lg text-neutral-400 tracking-[0.3em] uppercase font-light">
+              Fullstack Blockchain Dev
+            </p>
+            <div className="flex items-center justify-center gap-4 mt-4">
+              <a href="https://github.com/arko05roy" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-white transition-colors">
+                <IconBrandGithub className="w-5 h-5 md:w-6 md:h-6" />
+              </a>
+              <a href="https://x.com/ArkoDRoy" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-white transition-colors">
+                <IconBrandX className="w-5 h-5 md:w-6 md:h-6" />
+              </a>
+              <a href="https://www.linkedin.com/in/arkoroyy" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-white transition-colors">
+                <IconBrandLinkedin className="w-5 h-5 md:w-6 md:h-6" />
+              </a>
+            </div>
+          </div>
+
+          {/* Skills Overlay - Large screens only */}
+          <div className="hidden lg:block absolute inset-0 z-20 p-8">
+            {/* Top Left - Languages */}
+            <div className="absolute top-8 left-8">
+              <div className="text-xs font-serif text-neutral-400 uppercase tracking-widest mb-2">Languages</div>
+              <div className="flex flex-wrap gap-2 max-w-[250px]">
+                {["JavaScript", "TypeScript", "Solidity", "Python", "Rust", "C++"].map((item) => (
+                  <span key={item} className="text-xs text-neutral-300 font-mono hover:text-white transition-colors cursor-default">{item}</span>
+                ))}
               </div>
-            }
-            header={
-              <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-neutral-900/50 to-neutral-800/50 border border-white/5 relative overflow-hidden group-hover/bento:border-white/10 transition-colors">
-                <Image
-                  src="https://github.com/arko05roy.png"
-                  alt="Arko Roy"
-                  fill
-                  className="object-cover opacity-80 group-hover/bento:opacity-100 transition-opacity duration-500 grayscale group-hover:grayscale-0"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
+            </div>
 
-                {/* Da Vinci Overlay */}
-                <div className="absolute inset-0 border border-white/5 pointer-events-none">
-                  <div className="absolute top-4 left-4 w-2 h-2 border-t border-l border-white/20" />
-                  <div className="absolute top-4 right-4 w-2 h-2 border-t border-r border-white/20" />
-                  <div className="absolute bottom-4 left-4 w-2 h-2 border-b border-l border-white/20" />
-                  <div className="absolute bottom-4 right-4 w-2 h-2 border-b border-r border-white/20" />
-                </div>
+            {/* Top Right - Frameworks */}
+            <div className="absolute top-8 right-8 text-right">
+              <div className="text-xs font-serif text-neutral-400 uppercase tracking-widest mb-2">Frameworks</div>
+              <div className="flex flex-wrap gap-2 max-w-[250px] justify-end">
+                {["React.js", "Next.js", "Node.js", "TailwindCSS", "ShadCN"].map((item) => (
+                  <span key={item} className="text-xs text-neutral-300 font-mono hover:text-white transition-colors cursor-default">{item}</span>
+                ))}
               </div>
-            }
-          />
+            </div>
 
-          {/* Socials - Stacked */}
-          <BentoItem
-            className="md:col-span-1 md:row-span-1"
-            title="Connect"
-            description="Social Platforms"
-            header={
-              <div className="flex flex-col gap-2 h-full justify-center">
-                <div
-                  className="flex items-center gap-3 p-3 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-colors cursor-pointer backdrop-blur-md group"
-                  onClick={() => window.open("https://github.com/arko05roy", "_blank")}
-                >
-                  <IconBrandGithub className="w-6 h-6 text-neutral-400 group-hover:text-white transition-colors" />
-                  <span className="text-sm text-neutral-300 font-mono group-hover:text-white transition-colors">GitHub</span>
-                </div>
-                <div
-                  className="flex items-center gap-3 p-3 rounded-lg bg-[#0A66C2]/10 border border-[#0A66C2]/20 hover:bg-[#0A66C2]/20 transition-colors cursor-pointer backdrop-blur-md group"
-                  onClick={() => window.open("https://www.linkedin.com/in/arkoroyy", "_blank")}
-                >
-                  <IconBrandLinkedin className="w-6 h-6 text-[#0A66C2] group-hover:text-white transition-colors" />
-                  <span className="text-sm text-neutral-300 font-mono group-hover:text-white transition-colors">LinkedIn</span>
-                </div>
-                <div
-                  className="flex items-center gap-3 p-3 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-colors cursor-pointer backdrop-blur-md group"
-                  onClick={() => window.location.href = "mailto:arkoroy302@gmail.com"}
-                >
-                  <IconMail className="w-6 h-6 text-neutral-400 group-hover:text-white transition-colors" />
-                  <span className="text-sm text-neutral-300 font-mono group-hover:text-white transition-colors">Email</span>
-                </div>
+            {/* Bottom Left - Databases */}
+            <div className="absolute bottom-28 left-8">
+              <div className="text-xs font-serif text-neutral-400 uppercase tracking-widest mb-2">Databases</div>
+              <div className="flex flex-wrap gap-2 max-w-[250px]">
+                {["MongoDB", "PostgreSQL", "Firebase", "Prisma", "Supabase"].map((item) => (
+                  <span key={item} className="text-xs text-neutral-300 font-mono hover:text-white transition-colors cursor-default">{item}</span>
+                ))}
               </div>
-            }
-            icon={<IconArrowUpRight className="w-4 h-4 text-neutral-500" />}
-          />
+            </div>
 
-          {/* Tech Blueprint (Skills) */}
+            {/* Bottom Right - Tools */}
+            <div className="absolute bottom-28 right-8 text-right">
+              <div className="text-xs font-serif text-neutral-400 uppercase tracking-widest mb-2">Tools</div>
+              <div className="flex flex-wrap gap-2 max-w-[250px] justify-end">
+                {["Git", "Docker", "Foundry", "Hardhat", "Redis"].map((item) => (
+                  <span key={item} className="text-xs text-neutral-300 font-mono hover:text-white transition-colors cursor-default">{item}</span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <BentoGrid className="max-w-7xl mx-auto md:auto-rows-[20rem] relative z-20 mt-10 lg:mt-50">
+
+     
+
+          {/* Tech Blueprint (Skills) - Hidden on lg as it's shown on hero */}
           <BentoItem
-            className="md:col-span-3 md:row-span-2"
+            className="md:col-span-3 md:row-span-2 lg:hidden"
             title={<span className="font-serif text-xl">Technical Blueprint</span>}
             description="Comprehensive Skill Schematic"
             header={<TechBlueprint />}
