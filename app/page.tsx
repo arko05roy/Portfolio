@@ -5,6 +5,7 @@ import Image from "next/image";
 import Navbar from "./components/Navbar";
 import Background from "./components/Background";
 import TechBlueprint from "./components/TechBlueprint";
+import HeroStats from "./components/HeroStats";
 import ProjectInvention from "./components/ProjectInvention";
 import AchievementGallery from "./components/AchievementGallery";
 import { BentoGrid } from "./components/BentoGrid";
@@ -22,6 +23,10 @@ import {
 
 export default function Home() {
   useEffect(() => {
+    // Only enable Lenis on desktop (screens wider than 1024px)
+    const isMobile = window.innerWidth < 1024;
+    if (isMobile) return;
+
     const lenis = new Lenis();
 
     function raf(time: number) {
@@ -93,47 +98,9 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Skills Overlay - Large screens only */}
+          {/* Stats Overlay - Large screens only */}
           <div className="hidden lg:block absolute inset-0 z-20 p-8">
-            {/* Top Left - Languages */}
-            <div className="absolute top-8 left-8">
-              <div className="text-xs font-serif text-neutral-400 uppercase tracking-widest mb-2">Languages</div>
-              <div className="flex flex-wrap gap-2 max-w-[250px]">
-                {["JavaScript", "TypeScript", "Solidity", "Python", "Rust", "C++"].map((item) => (
-                  <span key={item} className="text-xs text-neutral-300 font-mono hover:text-white transition-colors cursor-default">{item}</span>
-                ))}
-              </div>
-            </div>
-
-            {/* Top Right - Frameworks */}
-            <div className="absolute top-8 right-8 text-right">
-              <div className="text-xs font-serif text-neutral-400 uppercase tracking-widest mb-2">Frameworks</div>
-              <div className="flex flex-wrap gap-2 max-w-[250px] justify-end">
-                {["React.js", "Next.js", "Node.js", "TailwindCSS", "ShadCN"].map((item) => (
-                  <span key={item} className="text-xs text-neutral-300 font-mono hover:text-white transition-colors cursor-default">{item}</span>
-                ))}
-              </div>
-            </div>
-
-            {/* Bottom Left - Databases */}
-            <div className="absolute bottom-28 left-8">
-              <div className="text-xs font-serif text-neutral-400 uppercase tracking-widest mb-2">Databases</div>
-              <div className="flex flex-wrap gap-2 max-w-[250px]">
-                {["MongoDB", "PostgreSQL", "Firebase", "Prisma", "Supabase"].map((item) => (
-                  <span key={item} className="text-xs text-neutral-300 font-mono hover:text-white transition-colors cursor-default">{item}</span>
-                ))}
-              </div>
-            </div>
-
-            {/* Bottom Right - Tools */}
-            <div className="absolute bottom-28 right-8 text-right">
-              <div className="text-xs font-serif text-neutral-400 uppercase tracking-widest mb-2">Tools</div>
-              <div className="flex flex-wrap gap-2 max-w-[250px] justify-end">
-                {["Git", "Docker", "Foundry", "Hardhat", "Redis"].map((item) => (
-                  <span key={item} className="text-xs text-neutral-300 font-mono hover:text-white transition-colors cursor-default">{item}</span>
-                ))}
-              </div>
-            </div>
+            <HeroStats />
           </div>
         </section>
 
