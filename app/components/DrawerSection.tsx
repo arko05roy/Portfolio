@@ -13,7 +13,6 @@ interface DrawerSectionProps {
 export default function DrawerSection({
   children,
   index,
-  totalSections,
   className = "",
 }: DrawerSectionProps) {
   const sectionRef = useRef<HTMLDivElement>(null);
