@@ -30,23 +30,26 @@ export default function DrawerSection({
     restDelta: 0.001,
   });
 
+  // First section is always visible, others animate in
+  const isFirst = index === 0;
+
   // 3D rotation that flattens as section comes into view (drawer opening)
-  const rotateX = useTransform(smoothProgress, [0, 0.5, 1], [65, 25, 0]);
+  const rotateX = useTransform(smoothProgress, [0, 0.5, 1], isFirst ? [0, 0, 0] : [65, 25, 0]);
 
   // Scale for depth perception - starts smaller and grows
-  const scale = useTransform(smoothProgress, [0, 0.5, 1], [0.8, 0.92, 1]);
+  const scale = useTransform(smoothProgress, [0, 0.5, 1], isFirst ? [1, 1, 1] : [0.8, 0.92, 1]);
 
   // Translate Y for the drawer sliding up effect
-  const translateY = useTransform(smoothProgress, [0, 1], [150, 0]);
+  const translateY = useTransform(smoothProgress, [0, 1], isFirst ? [0, 0] : [150, 0]);
 
   // Opacity for smooth fade in
-  const opacity = useTransform(smoothProgress, [0, 0.3, 1], [0, 0.7, 1]);
+  const opacity = useTransform(smoothProgress, [0, 0.3, 1], isFirst ? [1, 1, 1] : [0, 0.7, 1]);
 
   // Blur effect for depth of field
-  const blur = useTransform(smoothProgress, [0, 0.5, 1], [4, 1, 0]);
+  const blur = useTransform(smoothProgress, [0, 0.5, 1], isFirst ? [0, 0, 0] : [4, 1, 0]);
 
   return (
-    <div
+    <section
       ref={sectionRef}
       className={`h-screen w-full ${className}`}
       style={{
@@ -87,6 +90,6 @@ export default function DrawerSection({
           </div>
         </motion.div>
       </motion.div>
-    </div>
+    </section>
   );
 }
