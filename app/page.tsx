@@ -37,7 +37,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="bg-[#050505] text-foreground font-sans selection:bg-white selection:text-black">
+    <div className="bg-[#050505] text-foreground font-sans selection:bg-white selection:text-black min-h-screen overflow-y-auto">
       {/* Animated Background */}
       <Background />
 
